@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <input type="checkbox" id="input1"/>
+        <input type="checkbox" id="input2"/>
+    </body>
+    <script>
+        var inputRef = document.getElementById("input1");
+        console.log(inputRef, "inputRef");
+        inputRef.addEventListener("click", event =>{
+            event.preventDefault();
+            console.log(event, "eventttttt");
+        });
+    </script>
+</html>

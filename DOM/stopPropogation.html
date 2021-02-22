@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>stop propgation</title>
+    </head>
+    <body>
+        <div id="div1">
+            div click
+            <p id="p1">
+                p click
+                <span style="display:block" id="span1">
+                    span click
+                </span>
+            </p>
+        </div>
+    </body>
+    <script>
+        var div = document.getElementById('div1');
+        var p = document.getElementById('p1');
+        var span = document.getElementById('span1');
+
+
+        div.addEventListener("click", (event)=>{
+            alert("Hi, I am div clicked");
+        })
+
+        p.addEventListener("click", (event)=>{
+            event.stopPropagation(); // it stops the event to move upward
+            alert("Hi, I am p clicked");
+        })
+
+        p.addEventListener("click", (event)=>{
+            // event.stopPropagation(); // it stops the event to move upward
+            alert("Hi, I am p clicked 2");
+        })
+
+        span.addEventListener("click", (event)=>{
+            alert("Hi, I am span clicked");
+        })
+
+    </script>
+</html>

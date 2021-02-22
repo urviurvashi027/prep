@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>stop immediate propgation</title>
+    </head>
+    <body>
+        <div>
+            StopImmediatePropagation() event method: Prevents both propagation of any other handlers 
+            and those at top level DOM hierarchy. It stops the other events which were assigned after this event.
+        </div>
+    </body>
+    <script>
+        var divRef = document.querySelector("div");
+        divRef.addEventListener("click", function(event){
+            alert("click 1");
+        });
+        divRef.addEventListener("click", function(event){
+            event.stopImmediatePropagation();
+            alert("click 2");
+        });
+        divRef.addEventListener("click", function(event){
+            alert("click 3");
+        });
+    </script>
+</html>
