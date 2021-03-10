@@ -105,3 +105,35 @@ if (true) {
 }
 
 sayHi();
+//--------------------------
+function callTheNumber() {
+  function getAllNumbers(number) {
+    return function() {
+      return number;
+    };
+  }
+  var arrToStore = [];
+  for (var x = 0; x < 9; x++) {
+    arrToStore[x] = getAllNumbers(x);
+  }
+  return arrToStore;
+}
+
+const callInnerFunctions = callTheNumber();
+console.log(callInnerFunctions[0]()); // 0
+console.log(callInnerFunctions[1]()); // 1
+//======================================
+
+function countTheNumber() {
+  var arrToStore = [];
+  for (var x = 0; x < 9; x++) {
+    arrToStore[x] = function () {
+      return x;
+    };
+  }
+  return arrToStore;
+}
+
+const callInnerFunctions = countTheNumber();
+callInnerFunctions[0]() // 9
+callInnerFunctions[1]() // 9
