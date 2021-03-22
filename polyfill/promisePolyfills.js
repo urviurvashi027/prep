@@ -69,7 +69,34 @@ Promise.promiseAny = function(promisesArray) {
 
 // ------------------------------------------- Promise all settled -----------------------------------------------
 
-
+Promise.mySettled = function (promise) {
+  let result = [];
+    return new Promise((resolve, reject) => {
+      promise.forEach ((p,i) => {
+        p.then((value)=> {
+          result.push({
+            status: "fulfilled",
+            value: value
+          });
+             if (i == promise.length - 1) {
+          console.log(result, 'lll');
+          resolve(result)
+        }
+        })
+        .catch((e) => {
+          result.push({
+            status: "reject",
+            reason: e
+          })
+             if (i == promise.length - 1) {
+          console.log(result, 'lll');
+          resolve(result)
+        }
+        });
+     
+      });     
+});
+}
 
 
 

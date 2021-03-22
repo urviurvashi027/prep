@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style></style>
+</head>
+<body>
+   <p>parent</p>
+   <button onclick="sendMessage()">Click and send message to child</button>
+   <iframe src="./iframe.html" id="childref"></iframe>
+</body>
+<script>
+    function sendMessage() {
+        var ref = document.getElementById('childref');
+        console.log("kkkkk");
+        // myIframe.contentWindow.postMessage('hello', '*');
+        ref.contentWindow.postMessage('hii child', '*');
+    }
+    window.onmessage = function (e) {
+        console.log(e)
+        alert("pppp"+e.data)
+    }
+</script>
+
+
+
+</html>

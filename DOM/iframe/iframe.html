@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style></style>
+</head>
+<body>
+   <p>child</p>
+   <button onclick="sendMessage()"> Click and send message to parent</button>
+</body>
+<script>
+    window.onmessage = function (e) {
+        alert(e.data)
+    }
+
+    function sendMessage() {
+        window.top.postMessage('hello', '*')
+    }
+</script>
+
+
+
+</html>

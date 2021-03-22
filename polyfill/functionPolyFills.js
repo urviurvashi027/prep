@@ -77,7 +77,7 @@ Function.prototype.customApply = function(context, args){
 
 
 
-// random print function----------------------------------------------
+// todo random print function----------------------------------------------
 
 Function.prototype.printFnDetails = function() {
   var args = [];

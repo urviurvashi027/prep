@@ -1,0 +1,29 @@
+<!-- Doctype stands for Document Type Declaration. 
+    It informs the web browser about the type and version of HTML used in building the web document. 
+    This helps the browser to handle and load it properly. -->
+<!-- HTML 4.01:
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+
+<!-- In HTML 4.01, the DOCTYPE declaration refers to a document type definition (DTD). -->
+
+<!-- Additionally, doctypes for HTML 4.01 r
+    equired the declaration of either strict, transitional, or frameset DTD, each with a different use case as outlined below.
+
+Strict DTD: Used for web pages that exclude attributes and elements that W3C expects to phase out as CSS support grows
+Transitional DTD: Used for web pages that include attributes and elements that W3C expects to phase out as CSS support grows
+Frameset DTD: Used for web pages with frames -->
+
+<!-- Full standards mode renders pages according to the W3C web standards.
+Quirks mode renders pages in a non standards compliant way.
+Almost standards mode is close to full standards mode, but features support for a small number of quirks. -->
+
+<!-- Modern browsers generally try to render HTML content according to the W3C recommendations. 
+    However, to provide compatibility with older web pages, and to provide additional "intuitive" functionality, all browsers support an alternative "quirks mode".
+    Quirks mode is not, however, a standard. The rendering of any page in quirks mode in different browsers may be different. 
+    Whenever possible, it is better to adhere to the W3C standards and try and avoid depending on any past or present browser quirks.
+Generally, quirks mode is turned on when there is no correct DOCTYPE declaration, and turned off when there is a DOCTYPE definition. 
+However, invalid HTML - with respect to the chosen DOCTYPE - can also cause the browser to switch to quirks mode. -->
+
+<!-- => If you don't use doctype, Quirks mode => providing support for (backward compatibility mode)
+=> Tells about the type of document that is there. => XHTML, HTML4.1, HTML5
+=> If not used, some of the latest features might not work properly -->

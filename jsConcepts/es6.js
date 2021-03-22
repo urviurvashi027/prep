@@ -48,3 +48,38 @@ let obj = {
     }
   };
   console.log(obj.toString()); // object name
+
+// ------------------------- string literal ----------------------
+  // Simple string substitution
+  var name = "Brendan";
+  console.log(`Yo, ${name}!`);
+
+  // => "Yo, Brendan!"
+
+  // multiline
+  var greeting = "Yo \
+World";
+console.log(`string text line 1
+string text line 2`);
+
+//---
+var a = "temp string"; // static strings
+console.log(`My country is: ${ a }`);
+console.log(`My country is: ${ abc() }`);
+
+a = `
+    <div>
+        <br/>
+        <p>${  greeting}</p>
+    </div>
+`;
+
+// relatively faster compared to document APIs as DOM is slow
+
+// If you are playing around with a few limited elements/nodes - document.createElement
+// If the count is large - go for template literals
+
+const listItem = document.createElement("li");
+const node = document.createTextNode("Name: Jimmy");
+
+const content = `<li>Name: ${data.name}</li>`
