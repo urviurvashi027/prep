@@ -21,7 +21,7 @@ Array.prototype.eachEL = function(callback) {
   }
 
   const x = [09,76,54,21,54].myMap(function(album) {
-    return album
+    return album+1
   })
   
   console.log(x);
@@ -52,9 +52,9 @@ Array.prototype.eachEL = function(callback) {
     return result;
   }
 
-  const array = ['blastoff', 1, 2, 3];
-  const y = array.revy();
-  console.log(y);
+  const array2 = ['blastoff', 1, 2, 3];
+  const y1 = array2.revy();
+  console.log(y1);
 
   // join todo
 
@@ -73,6 +73,19 @@ Array.prototype.eachEL = function(callback) {
   console.log(y);
 
   // filter todo
+
+  Array.prototype.filter = function (fn) {
+    const context = this;
+    const result = [];
+    if (context.length > 0) {
+      for (let i = 0; i < context.length; i++) {
+        let output = (fn(context[i], i, context));
+        (output) ? result.push(context[i]) : null
+      }
+    }
+    return result
+  }
+
   // reduce todo
 
 

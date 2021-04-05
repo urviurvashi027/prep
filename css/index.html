@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            h3 {
+                margin: 20px 10px;
+                color: maroon;
+            }
+            :root{
+                --color-drak: #3E3A3A;
+            }
+
+            .color-dark{
+                color: var(--color-drak)
+            }
+            .position-div { 
+                width: 100px;
+                height: 50px;
+                background-color: #cc99ff;
+                border: 1px solid #cc66ff;
+                margin: 20px 10px;
+            }
+            .positioned-div{
+                width: 100px;
+                height: 50px;
+                background-color: #ffff00;
+                border: 1px solid #999900;
+                margin: 20px 10px;
+            }
+            table{
+                width: 100%;
+            }
+            table ,td, tr{
+                
+                border: 1px solid #000;
+            }
+            .el > div ::first-letter{
+                color: #cc66ff; 
+            }
+            .cl:hover{
+                color: #cc66ff;
+            }
+            /* seletors */
+            .space p{
+                color: green;
+            }
+            .carot> p {
+                color: red;
+            }
+            .plus + p {
+                color: indigo;
+            }
+            .tidle ~ p {
+                color:lightsalmon;
+            }
+            /* Pointer events */
+            .ex1 {
+            pointer-events: none;
+            }
+
+            .ex2 {
+            pointer-events: auto;
+            }
+            /* ts vs abs */
+            .abs{
+            position : absolute;
+            top:50px;
+            left: 100px;
+            height: 50px;
+            width: 15%;
+            border: 1px solid #4CAF50;
+            }
+
+            .ts{
+                transform: translate(0px, 10px);
+                height: 50px;
+                width: 15%;
+                border: 1px solid #4CAF50;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>CSS Variables</h3>
+        <p class="color-dark">Variable CSS</p>
+        <h3>Position</h3>
+
+        <table>
+            <thead>
+            <tr>
+                <td>STATIC</td>
+                <td>STICKY</td>
+                <td>REALATIVE</td>
+                <td>FIXED</td>
+                <td>EXAMPLE</td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>DISPLAY</h3>
+        <table>
+            <thead>
+            <tr>
+                <td>INLINE</td>
+                <td>BLOCK</td>
+                <td>INLINE BLOCK </td>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        respect left & right margins and padding, but not top & bottom <br/>
+                        cannot have a width and height set <br/>
+                        allow other elements to sit to their left and right. <br/>
+                    </td>
+                    <td>
+                        respect all of those <br/>
+                        force a line break after the block element <br/>
+                        acquires full-width if width not defined <br/>
+                    </td>
+                    <td>
+                        allow other elements to sit to their left and right <br>
+                        respect top & bottom margins and padding <br/>
+                        respect height and width <br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>EXAMPLE</div>
+                        <span style="width: 200px;
+                        height: 200px;
+                        padding: 20px 30px;
+                        margin: 10px 20px;">SPAN tag</span>
+                    </td>
+
+                    <td>
+                        <div>EXAMPLE</div>
+                        <div>DIV</div>
+                    </td>
+
+                    <td>
+                        <div >EXAMPLE</div>
+                        <span style="display: inline-block;
+                        width: 169px;
+                        height: 122px;
+                        padding: 20px 30px;
+                        margin: 10px 20px;
+                        background-color: #E67AF9;">SPAN TAG</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>
+                            width: 200px;
+                        height: 200px;
+                        padding: 20px 30px;
+                        margin: 10px 20px;
+                        </code>
+                    </td>
+                    <td></td>
+                    <td>
+                        <code>
+                            display: inline-block;
+                        width: 169px;
+                        height: 122px;
+                        padding: 20px 30px;
+                        margin: 10px 20px;
+                        background-color: #E67AF9;
+                        </code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>CSS SPECIFICITY</h3>
+        <h3>BOX MODEL</h3>
+        <div>
+            The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content.
+            box-sizing property defines how the width and height of an element are calculated. (default - content-box)
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <td>CONTENT BOX</td>
+                    <td>BORDER BOX</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div style=" width: 420px;
+                        padding: 10px;
+                        border: 5px solid gray;
+                        margin: 0;">The total width of this element is also 350px. (CONTENT)</div>
+                    </td>
+                    <td style="
+                                box-sizing: border-box;
+                                width: 420px;
+                                padding: 10px;
+                                border: 5px solid gray;
+                                margin: 0;">
+                        he total width of this element is also 320px. (CONTENT, BORDER,PADDING)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <code>
+                            {
+                                width: 320px;
+                                padding: 10px;
+                                border: 5px solid gray;
+                                margin: 0;
+                              } 
+                        </code>
+                    </td>
+                    <td>
+                        <code>
+                            {
+                                box-sizing: border-box;
+                                width: 320px;
+                                padding: 10px;
+                                border: 5px solid gray;
+                                margin: 0;
+                              } 
+                        </code>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>FLEX MODEL</h3>
+        <h3>MEDIA QUERY</h3>
+        <h3>UNIVERSAL SELECTOR</h3>
+        <div>
+            The CSS universal selector (*) matches elements of any type.
+        </div>
+        <h3>CENTER ALIGN INSIDE SCREEN</h3>
+        <div style="width: 100px; height: 100px; background-color: aquamarine; display: flex; justify-content: center; align-items: center;">
+            <div style="width: 10px; height: 10px; background-color: #3E3A3A;">
+
+            </div>
+        </div>
+        <h3>TRNSFORM VS POSITION</h3>
+        <div>
+            <div class="abs">Absoltue</div>
+            <div class="ts">Transform</div>
+        </div>
+        <h3>FLOAT</h3>
+        <div>
+            CLEAR : The clear property specifies on which sides of an element floating elements are not allowed to float.
+            <div style="width: 100px;height: 100px;">
+                <p style="float: left;">LEFT</p>
+                <p> Without clear </p>
+            </div>
+            <div style="width: 100px;height: 100px;">
+                <p style="float: left;">LEFT</p>
+                <p style="clear: both;">  with clear </p>
+            </div>
+        </div>
+        <h3>Z-INDEX</h3>
+        <div>
+            The z-index property specifies the stack order of an element. <br/>
+
+            An element with greater stack order is always in front of an element with a lower stack order. <br>
+
+            Note: z-index only works <br>
+        </div>
+        <span>Example</span>
+        <div style="position: relative;">
+            <img style="  position: absolute;
+            left: 0px;
+            top: -100px;
+            z-index: -1;" src="data:image/jpeg;base64,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" width="100" height="140">
+    
+            <p>Because the image has a z-index of -1, it will be placed behind the heading.</p>
+        </div>
+
+        <h3>VISIBILTY DISPLAY OPACITY</h3>
+        <h3>PSEUDO ELEMENTS VS PSEUDO CLASSES</h3>
+        <table>
+            <thead>
+                <tr>
+                    <td>ELEMENTS</td>
+                    <td>CLASSES</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        :: <br>
+                        used to style specified parts of an element. <br>
+
+                        For example, it can be used to: <br>
+
+                            Style the first letter, or line, of an element <br>
+I                           nsert content before, or after, the content of an element
+                    </td>
+                    <td>
+                        : <br>
+                        A pseudo-class is used to define a special state of an element. <br>
+
+                        For example, it can be used to: <br>
+
+                        Style an element when a user mouses over it <br>
+                        Style visited and unvisited links differently <br>
+                        Style an element when it gets focus
+                    </td>
+                </tr>
+                <tr>
+                    <td><div class="el">URVASHI</div></td>
+                    <td> <div class="cl">URVASHI</div></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>PRINT</h3>
+        <div>
+            You can use CSS to change the appearance of your web page when it's printed on a paper. You can specify one font for the screen version and another for the print version.
+            <code>link rel = "stylesheet" type = "text/css" media = "print" href = "mystyle.css"</code>
+        </div>
+        <h3>RENDER TREE</h3>
+        <h3>+ VS > VS SPACE vs ~</h3>
+        <div>
+            There are four different combinators in CSS: <br/>
+
+            descendant selector (space) <br/>
+            child selector (>) <br/>
+            adjacent sibling selector (+) <br/>
+            general sibling selector (~) <br/>
+            <table>
+                <thead>
+                    <tr>
+                        <td>SPACE</td>
+                        <td>></td>
+                        <td>~</td>
+                        <td>+</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Selects all the p inside div</td>
+                        <td>The child selector selects all elements that are the children of a specified element.</td>
+                        <td>The general sibling selector selects all elements that are siblings of a specified element.</td>
+                        <td>The adjacent sibling selector is used to select an element that is directly after another specific element.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="space">
+                                <p>Hii</p>
+                                <p>Urvashi</p>
+                            </div>
+                            <p>Outside</p>
+                        </td>
+                        <td>
+                              <div class="carot">
+                                <p>Paragraph 1 in the div.</p>
+                                <p>Paragraph 2 in the div.</p>
+                              </div>
+                              
+                              <p>Paragraph 3. After a div.</p>
+                              <p>Paragraph 4. After a div.</p>
+                        </td>
+                        <td>
+                            <div class="tidle">
+                                <p>Paragraph 2.</p>
+                              </div>
+                              
+                              <p>Paragraph 3.</p>
+                              <code>Some code.</code>
+                              <p>Paragraph 4.</p>
+                        </td>
+                        <td> 
+                            <div class="plus">
+                                <p>Paragraph 1 in the div.</p>
+                                <p>Paragraph 2 in the div.</p>
+                              </div>
+                              
+                              <p>Paragraph 3. After a div.</p>
+                              <p>Paragraph 4. After a div.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <h3>POINTER EVENTS</h3>
+        <div>
+            Set whether or not an element should react to pointer events:
+            <p>
+                <code>
+                    div.ex1 {
+                        pointer-events: none;
+                      }
+                      
+                      div.ex2 {
+                        pointer-events: auto;
+                      }
+                </code>
+            </p>
+            <p>
+                <div class="ex1">Go to <a href="https://www.w3schools.com/html">HTML Tutorial</a></div>
+
+                <h2>pointer-events: auto (default):</h2>
+                <div class="ex2">Go to <a href="https://www.w3schools.com/css">CSS Tutorial</a></div>
+            </p>
+        </div>
+        <h3>SCSS</h3>
+        <h3>ANIMATIONS</h3>
+        <h3>BEM</h3>
+        <div>
+            Block, Element, Modifier methodology 
+            <textarea rows="8" cols="50" disabled>     <a class="btn btn--big btn--orange" href="https://css-tricks.com">
+                <span class="btn__price">$9.99</span>
+                <span class="btn__text">Subscribe</span>
+              </a> </textarea>
+        
+        </div>
+        <h3>RESET VS NORMALISE</h3>
+        <div>
+            The major difference is that: <br/>
+
+CSS resets aim to remove all built-in browser styling. Standard elements like H1-6, p, strong, em, et cetera end up looking exactly alike, having no decoration at all. You're then supposed to add all decoration yourself. <br>
+
+Normalize CSS aims to make built-in browser styling consistent across browsers. Elements like H1-6 will appear bold, larger et cetera in a consistent way across browsers. You're then supposed to add only the difference in decoration your design needs. <br>
+        </div>
+        <h3>SELECTORS</h3>
+        <div>
+            CSS selectors are used to "find" (or select) the HTML elements you want to style. <br/>
+
+            We can divide CSS selectors into five categories: <br/>
+
+            Simple selectors (select elements based on name, id, class) <br/>
+            Combinator selectors (select elements based on a specific relationship between them)<br/>
+            Pseudo-class selectors (select elements based on a certain state)<br/>
+            Pseudo-elements selectors (select and style a part of an element)<br/>
+            Attribute selectors (select elements based on an attribute or attribute value)<br/>
+
+        </div>
+    </body>
+</html>
